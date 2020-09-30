@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19739afd7a8148e4abd865650ce4e19d, type: 3}
-  m_Name: WoodHarvesterSO
+  m_Script: {fileID: 11500000, guid: ad6f2c2d588bf6849a7b2bedd3b4079b, type: 3}
+  m_Name: Wood
   m_EditorClassIdentifier: 
-  nameString: Wood Harvester
-  Prefab: {fileID: 1114991472754504010, guid: 7d780e8b5481f04498a03e515acacebc, type: 3}
+  nameString: Wood
+  sprite: {fileID: 21300000, guid: 0b991b4895d956f4ea5f954ab13b7529, type: 3}
