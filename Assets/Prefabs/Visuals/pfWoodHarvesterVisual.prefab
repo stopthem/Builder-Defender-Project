@@ -4786,7 +4786,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 382055491
+  m_SortingLayerID: 799888637
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_RenderMode: 0
@@ -4903,6 +4903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3565715747615973155}
   - component: {fileID: 2268314973451219183}
+  - component: {fileID: -6122198587011732885}
   m_Layer: 0
   m_Name: pfWoodHarvesterVisual
   m_TagString: Untagged
@@ -4955,6 +4956,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6122198587011732885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3565715747615973154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0900573fb23dd4c9118736a9a4e435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runOnce: 1
+  positionOffsetY: 0
 --- !u!1 &3654176723631551727
 GameObject:
   m_ObjectHideFlags: 0
