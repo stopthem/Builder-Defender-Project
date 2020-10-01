@@ -38,7 +38,6 @@ public class ResourceGenerator : MonoBehaviour
             }
         }
         
-        Debug.Log("nearbyResourceAmount " + nearbyResourceAmount +timerMax);
     }
     private void Update()
     {
