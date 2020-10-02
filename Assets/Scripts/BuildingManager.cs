@@ -29,9 +29,26 @@ public class BuildingManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            if (activeBuildingType != null && CanSpawnBuilding(activeBuildingType,UtilsClass.GetMouseWorldPosition()))
+            if (activeBuildingType != null)
             {
-                Instantiate(activeBuildingType.Prefab,UtilsClass.GetMouseWorldPosition(),Quaternion.identity);
+                if (CanSpawnBuilding(activeBuildingType,UtilsClass.GetMouseWorldPosition(),out string errorMessage))
+                {
+                    if (ResourceManager.Instance.CanAfford(activeBuildingType.constructionResourceCostArray))
+                    {
+                    ResourceManager.Instance.SpendResources(activeBuildingType.constructionResourceCostArray);
+                
+                    Instantiate(activeBuildingType.Prefab,UtilsClass.GetMouseWorldPosition(),Quaternion.identity);
+                    }
+                    else
+                    {
+                        TooltipUI.Instance.Show(" Cannot Afford " + activeBuildingType.GetConstructionResourceCostString(), new TooltipUI.ToolTipTimer {timer = 2f});
+                    }
+                }
+                else
+                {
+                    TooltipUI.Instance.Show(errorMessage, new TooltipUI.ToolTipTimer {timer = 2f});
+                }
+                
             }
             
         }
@@ -46,13 +63,14 @@ public class BuildingManager : MonoBehaviour
     {
         return activeBuildingType;
     }
-    private bool CanSpawnBuilding( BuildingTypeSo buildingType, Vector3 position)
+    private bool CanSpawnBuilding( BuildingTypeSo buildingType, Vector3 position, out string errorMessage)
     {
         BoxCollider2D boxCollider2D = buildingType.Prefab.GetComponent<BoxCollider2D>();
         Collider2D[] collider2DArray = Physics2D.OverlapBoxAll(position + (Vector3)boxCollider2D.offset, boxCollider2D.size, 0);
         bool isAreaClear = collider2DArray.Length == 0;
         if (!isAreaClear)
         {
+            errorMessage =" Area not clear ";
             return false;
         }
         collider2DArray = Physics2D.OverlapCircleAll(position, buildingType.minConstructionRadius);
@@ -63,6 +81,7 @@ public class BuildingManager : MonoBehaviour
             {
                 if (buildingTypeHolder.buildingType == buildingType)
                 {
+                    errorMessage = " Too close to another building with the same type ";
                     return false;
                 }
             }
@@ -75,9 +94,11 @@ public class BuildingManager : MonoBehaviour
             BuildingTypeHolder buildingTypeHolder = collider2D.GetComponent<BuildingTypeHolder>();
             if (buildingTypeHolder != null)
             {
+                errorMessage = "";
                 return true;
             }
         }
+        errorMessage = " Too far from any other building ";
         return false;
         
     }

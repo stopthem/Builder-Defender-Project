@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runOnce: 1
-  positionOffsetY: -5
+  positionOffsetY: -7
 --- !u!1 &4166171909411414931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5348,7 +5348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runOnce: 1
-  positionOffsetY: -5
+  positionOffsetY: -7
 --- !u!1 &7483812125931111611
 GameObject:
   m_ObjectHideFlags: 0
