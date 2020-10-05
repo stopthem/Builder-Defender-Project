@@ -12,6 +12,8 @@ public class BuildingManager : MonoBehaviour
     public class OnActiveBuildingTypeChangedEventArgs : EventArgs{
         public BuildingTypeSo activeBuildingType;
     }
+
+    [SerializeField] private Building hqBuilding;
     private BuildingTypeSo activeBuildingType;
     private BuildingTypeSOList buildingTypeList;
     private Camera mainCamera;
@@ -51,6 +53,11 @@ public class BuildingManager : MonoBehaviour
                 
             }
             
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Vector3 enemySpawnPosition = UtilsClass.GetMouseWorldPosition() + UtilsClass.GetRandomDirection() * 5f;
+            Enemy.Create(enemySpawnPosition);
         }
         
     }
@@ -101,5 +108,10 @@ public class BuildingManager : MonoBehaviour
         errorMessage = " Too far from any other building ";
         return false;
         
+        
+    }
+    public Building GetHQBuiliding()
+    {
+        return hqBuilding;
     }
 }
