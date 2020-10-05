@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19739afd7a8148e4abd865650ce4e19d, type: 3}
-  m_Name: GoldHarvesterSO
+  m_Name: TowerSO
   m_EditorClassIdentifier: 
-  nameString: Gold Harvester
-  Prefab: {fileID: 1114991472754504010, guid: 5441b4e6b14c5fc438aef3d32ac42d91, type: 3}
-  hasResourceGeneratorData: 1
+  nameString: Tower
+  Prefab: {fileID: 1114991472754504010, guid: cb7e1684a76402547bac47326db3a613, type: 3}
+  hasResourceGeneratorData: 0
   resourceGeneratorData:
-    timerMax: 2
-    resourceType: {fileID: 11400000, guid: e7ba96531aa16244ea0b2c6396cc7a3a, type: 2}
-    resourceDetectionRadius: 7
-    maxResourceAmount: 3
-  sprite: {fileID: 21300000, guid: 8ead931dd91bff8489e75de9c414f17f, type: 3}
+    timerMax: 0
+    resourceType: {fileID: 0}
+    resourceDetectionRadius: 0
+    maxResourceAmount: 0
+  sprite: {fileID: 21300000, guid: 3a549cd61f4d79e4b996c9978dac641f, type: 3}
   minConstructionRadius: 7
   constructionResourceCostArray:
-  - resourceType: {fileID: 11400000, guid: 137efd9d032764e4da5ba074dfc68603, type: 2}
-    amount: 50
   - resourceType: {fileID: 11400000, guid: f3a75bcf8d14a63428d2c82f893ac19c, type: 2}
     amount: 75
-  healthAmountMax: 100
+  - resourceType: {fileID: 11400000, guid: 137efd9d032764e4da5ba074dfc68603, type: 2}
+    amount: 50
+  healthAmountMax: 150

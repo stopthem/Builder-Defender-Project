@@ -24,7 +24,7 @@ public class ResourceGenerator : MonoBehaviour
     }
     private float timer;
     private ResourceGeneratorData resourceGeneratorData;
-    private float timerMax;
+    private float timerMax;  
     private void Awake()
     {
         resourceGeneratorData = GetComponent<BuildingTypeHolder>().buildingType.resourceGeneratorData;

@@ -15,14 +15,39 @@ public class Enemy : MonoBehaviour
     
     private Transform target;
     private Rigidbody2D rigidbody2d;
+    private HealthSystem healthSystem;
     private float lookForTargetTimer, lookForTargetTimerMax = .2f;
     private void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         target = BuildingManager.Instance.GetHQBuiliding().transform;
         lookForTargetTimer = Random.Range(0f, lookForTargetTimerMax);
+        healthSystem = GetComponent<HealthSystem>();
+        healthSystem.OnDied += HealthSystem_OnDied;
     }
+
+    private void HealthSystem_OnDied(object sender, System.EventArgs e)
+    {
+        Destroy(gameObject);
+    }
+
     private void Update()
+    {
+        HandleMovement();
+        HandleTargeting();
+    }
+
+    private void HandleTargeting()
+    {
+        lookForTargetTimer -= Time.deltaTime;
+        if (lookForTargetTimer < 0f)
+        {
+            lookForTargetTimer += lookForTargetTimerMax;
+            LookForTargets();
+        }
+    }
+
+    private void HandleMovement()
     {
         if (target.position != null)
         {
@@ -34,14 +59,8 @@ public class Enemy : MonoBehaviour
         {
             rigidbody2d.velocity = Vector2.zero;
         }
-        
-        lookForTargetTimer -= Time.deltaTime;
-        if (lookForTargetTimer < 0f)
-        {
-            lookForTargetTimer += lookForTargetTimerMax;
-            LookForTargets();
-        }
     }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         Building building = other.gameObject.GetComponent<Building>();
