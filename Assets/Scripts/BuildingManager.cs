@@ -54,12 +54,6 @@ public class BuildingManager : MonoBehaviour
             }
             
         }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Vector3 enemySpawnPosition = UtilsClass.GetMouseWorldPosition() + UtilsClass.GetRandomDirection() * 5f;
-            Enemy.Create(enemySpawnPosition);
-        }
-        
     }
     public void SetActiveBuildingType(BuildingTypeSo buildingType)
     {
