@@ -31,6 +31,16 @@ public class EnemyWaveUI : MonoBehaviour
 
     private void Update()
     {
+        HandleNextWaveMessage();
+        
+        HandleWaveSpawnPosition();
+
+        HandleClosestEnemy();
+
+    }
+
+    private void HandleNextWaveMessage()
+    {
         float nextWaveSpawnTimer = enemyWaveManager.GetNextWaveSpawnTimer();
         if (nextWaveSpawnTimer <= 0f)
         {
@@ -40,15 +50,16 @@ public class EnemyWaveUI : MonoBehaviour
         {
             SetMessageText("Next wave in " + nextWaveSpawnTimer.ToString("F0") + "s");
         }
+    }
+
+    private void HandleWaveSpawnPosition()
+    {
         Vector3 directionToTheNextSpawn = (enemyWaveManager.GetSpawnPosition() - mainCamera.transform.position).normalized;
         enemyWaveSpawnPositionIndicator.anchoredPosition = directionToTheNextSpawn * 30f;
         enemyWaveSpawnPositionIndicator.eulerAngles = new Vector3(0, 0, UtilsClass.GetAngleFromVector(directionToTheNextSpawn));
 
         float distanceToNextSpawnPosition = Vector3.Distance(enemyWaveManager.GetSpawnPosition(), mainCamera.transform.position);
         enemyWaveSpawnPositionIndicator.gameObject.SetActive(distanceToNextSpawnPosition > mainCamera.orthographicSize * 1.5f);
-
-        HandleClosestEnemy();
-
     }
 
     private void HandleClosestEnemy()
