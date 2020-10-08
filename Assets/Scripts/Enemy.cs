@@ -27,10 +27,17 @@ public class Enemy : MonoBehaviour
         lookForTargetTimer = Random.Range(0f, lookForTargetTimerMax);
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.OnDied += HealthSystem_OnDied;
+        healthSystem.OnDamaged += HealthSystem_OnDamaged;
+    }
+
+    private void HealthSystem_OnDamaged(object sender, System.EventArgs e)
+    {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyHit);
     }
 
     private void HealthSystem_OnDied(object sender, System.EventArgs e)
     {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
         Destroy(gameObject);
     }
 
@@ -71,6 +78,7 @@ public class Enemy : MonoBehaviour
         {
             HealthSystem healthSystem = building.GetComponent<HealthSystem>();
             healthSystem.Damage(10);
+            SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyHit);
             Destroy(gameObject);
         }
     }
