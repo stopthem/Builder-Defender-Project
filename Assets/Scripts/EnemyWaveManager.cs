@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 public class EnemyWaveManager : MonoBehaviour
 {
+    public static EnemyWaveManager Instance {get; private set;}
     public event EventHandler OnWaveNumberChanged;
     private enum State{
         WaitingToSpawnNextWave,
@@ -17,6 +18,10 @@ public class EnemyWaveManager : MonoBehaviour
     private Vector3 spawnPosition;
     private int remainingEnemySpawnAmount;
     private int waveNumber;
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         state = State.WaitingToSpawnNextWave;
@@ -56,7 +61,7 @@ public class EnemyWaveManager : MonoBehaviour
     }
     private void SpawnWave()
     {
-        remainingEnemySpawnAmount = 5 + 3 * waveNumber;
+        remainingEnemySpawnAmount = 4 + 3 * waveNumber;
         state = State.SpawningWave;
         waveNumber++;
         OnWaveNumberChanged?.Invoke(this,EventArgs.Empty);

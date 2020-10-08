@@ -20,13 +20,20 @@ public class BuildingManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        buildingTypeList = Resources.Load<BuildingTypeSOList>(typeof(BuildingTypeSOList).Name);
     }
     private void Start()
     {
         mainCamera = Camera.main;
 
-        buildingTypeList = Resources.Load<BuildingTypeSOList>(typeof(BuildingTypeSOList).Name);
+        hqBuilding.GetComponent<HealthSystem>().OnDied += HQ_OnDied;
     }
+
+    private void HQ_OnDied(object sender, EventArgs e)
+    {
+        GameOverUI.Instance.Show();
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
