@@ -10,7 +10,7 @@ public class MainMenuUI : MonoBehaviour
         transform.Find("playButton").GetComponent<Button>().onClick.AddListener( () => {
             GameSceneManager.LoadGameScene();
         });
-        transform.Find("exitButton").GetComponent<Button>().onClick.AddListener( () => {
+        transform.Find("quitButton").GetComponent<Button>().onClick.AddListener( () => {
             Application.Quit();
         });
     }
