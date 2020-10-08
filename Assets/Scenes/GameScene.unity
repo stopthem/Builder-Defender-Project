@@ -19195,7 +19195,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 26.00001
+  orthographic size: 29.99999
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -44001,6 +44001,7 @@ GameObject:
   - component: {fileID: 1090417574}
   - component: {fileID: 1090417576}
   - component: {fileID: 1090417575}
+  - component: {fileID: 1090417577}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -44075,6 +44076,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1090417577
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090417573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 5
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!4 &1091127479 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3188972563126631656, guid: 45074dad95be1114c9bccc4e32eb19ba,
@@ -54776,6 +54793,7 @@ GameObject:
   - component: {fileID: 1415489527}
   - component: {fileID: 1415489526}
   - component: {fileID: 1415489528}
+  - component: {fileID: 1415489529}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -54805,7 +54823,7 @@ MonoBehaviour:
   m_Follow: {fileID: 2086327106}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 26.00001
+    OrthographicSize: 29.99999
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -54850,6 +54868,18 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 931011839}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &1415489529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415489525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ec55d900a55144c860afe4d56d667c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1415624728
 PrefabInstance:
   m_ObjectHideFlags: 0
