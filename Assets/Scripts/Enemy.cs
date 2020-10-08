@@ -6,8 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public static Enemy Create(Vector3 position)
     {
-        Transform enemyPrefab = Resources.Load<Transform>("Enemy");
-        Transform enemyTransform = Instantiate(enemyPrefab , position , Quaternion.identity);
+        Transform enemyTransform = Instantiate(GameAssets.Instance.pfEnemy , position , Quaternion.identity);
 
         Enemy enemy = enemyTransform.GetComponent<Enemy>();
         return enemy;
@@ -40,7 +39,7 @@ public class Enemy : MonoBehaviour
     {
         SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
         CinemachineShake.Instance.ShakeCamera(7f, .15f);
-        Instantiate(Resources.Load<Transform>("pfEnemyDieParticles"),transform.position, Quaternion.identity);
+        Instantiate(GameAssets.Instance.pfEnemyDieParticles,transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
