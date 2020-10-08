@@ -329,6 +329,16 @@ PrefabInstance:
       propertyPath: healthSystem
       value: 
       objectReference: {fileID: -4279693368194154172}
+    - target: {fileID: 3094775013061156396, guid: 1567bfef0de16314f846934a132dc3b8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.156
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094775013061156396, guid: 1567bfef0de16314f846934a132dc3b8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.367
+      objectReference: {fileID: 0}
     - target: {fileID: 6229306206652320499, guid: 1567bfef0de16314f846934a132dc3b8,
         type: 3}
       propertyPath: m_LocalPosition.x
