@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
     private void HealthSystem_OnDied(object sender, System.EventArgs e)
     {
         SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
+        Instantiate(Resources.Load<Transform>("pfEnemyDieParticles"),transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
@@ -79,7 +80,7 @@ public class Enemy : MonoBehaviour
             HealthSystem healthSystem = building.GetComponent<HealthSystem>();
             healthSystem.Damage(10);
             SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyHit);
-            Destroy(gameObject);
+            this.healthSystem.Damage(999);
         }
     }
     private void LookForTargets()
