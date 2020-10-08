@@ -7,10 +7,10 @@ public class GameSceneManager : MonoBehaviour
 {
     public static void LoadGameScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public static void LoadMainMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }

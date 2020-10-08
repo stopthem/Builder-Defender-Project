@@ -11,14 +11,13 @@ public class SoundManager : MonoBehaviour
         BuildingDamaged,
         EnemyDie,
         EnemyHit,
-        EnemyWaveStarting,
         GameOver,
-        Music
 
     }
 
     private AudioSource audioSource;
     private Dictionary<Sound, AudioClip> soundAudioClipDictionary;
+    private float volume = .5f;
     private void Awake()
     {
         Instance = this;
@@ -31,6 +30,21 @@ public class SoundManager : MonoBehaviour
     }
     public void PlaySound(Sound sound)
     {
-        audioSource.PlayOneShot(soundAudioClipDictionary[sound]);
+        audioSource.PlayOneShot(soundAudioClipDictionary[sound], volume);
+    }
+    public void IncreaseVolume()
+    {
+        volume += .1f;
+        volume = Mathf.Clamp01(volume);
+    }
+    public void DecreaseVolume()
+    {
+        volume -= .1f;
+        volume = Mathf.Clamp01(volume);
+    }
+    public float GetVolume()
+    {
+        return volume;
     }
 }
+
