@@ -19195,7 +19195,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 16.00001
+  orthographic size: 26.00001
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -20724,11 +20724,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingResourceAmountList:
   - resourceType: {fileID: 11400000, guid: f3a75bcf8d14a63428d2c82f893ac19c, type: 2}
-    amount: 100
+    amount: 50
   - resourceType: {fileID: 11400000, guid: 137efd9d032764e4da5ba074dfc68603, type: 2}
-    amount: 100
+    amount: 25
   - resourceType: {fileID: 11400000, guid: e7ba96531aa16244ea0b2c6396cc7a3a, type: 2}
-    amount: 100
+    amount: 15
 --- !u!4 &543897113
 Transform:
   m_ObjectHideFlags: 0
@@ -34954,6 +34954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 879660546}
   - component: {fileID: 879660545}
+  - component: {fileID: 879660547}
   m_Layer: 0
   m_Name: Global Light 2D
   m_TagString: Untagged
@@ -35016,6 +35017,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &879660547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879660544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb9ff3125add66d4881e68cd0bcf10f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 0.78125805, b: 0.4669811, a: 1}
+    key2: {r: 0.57254905, g: 0.75686276, b: 0.8039216, a: 0}
+    key3: {r: 0.5711552, g: 0.7535942, b: 0.8018868, a: 0}
+    key4: {r: 0.8490566, g: 0.75206995, b: 0.5246529, a: 0}
+    key5: {r: 1, g: 1, b: 1, a: 0}
+    key6: {r: 1, g: 1, b: 1, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 16962
+    ctime1: 23708
+    ctime2: 31033
+    ctime3: 38936
+    ctime4: 47609
+    ctime5: 57440
+    ctime6: 57440
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 6
+    m_NumAlphaKeys: 2
+  secondsPerDay: 10
 --- !u!1 &880875094
 GameObject:
   m_ObjectHideFlags: 0
@@ -54823,7 +54866,7 @@ MonoBehaviour:
   m_Follow: {fileID: 2086327106}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 16.00001
+    OrthographicSize: 26.00001
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
