@@ -41,6 +41,7 @@ public class OptionsUI : MonoBehaviour
     {
         transform.Find("edgeScrollingToggle").GetComponent<Toggle>().SetIsOnWithoutNotify(CameraHandler.Instance.GetEdgeScrolling());
         UpdateSoundText();
+        UpdateMusicText();
         gameObject.SetActive(false);
     }
     private void UpdateSoundText()
