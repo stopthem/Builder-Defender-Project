@@ -12,7 +12,6 @@ public class BuildingManager : MonoBehaviour
     public class OnActiveBuildingTypeChangedEventArgs : EventArgs{
         public BuildingTypeSo activeBuildingType;
     }
-
     [SerializeField] private Building hqBuilding;
     private BuildingTypeSo activeBuildingType;
     private BuildingTypeSOList buildingTypeList;
@@ -108,8 +107,6 @@ public class BuildingManager : MonoBehaviour
                 
             }
         }
-        
-        
         float maxConstructionRadius = 25f;
         collider2DArray = Physics2D.OverlapCircleAll(position, maxConstructionRadius);
         foreach (Collider2D collider2D in collider2DArray)
